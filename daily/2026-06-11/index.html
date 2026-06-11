@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>语音与音频 AI 日报 · 2026-06-11</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>🎙️ 语音与音频 AI 日报</h1>
+    <p class="subtitle">2026-06-11 · 第5期</p>
+    <p class="date">共 9 篇精选论文 · 来源：arXiv eess.AS + cs.SD</p>
+  </header>
+
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">🔥 重点论文</h2>
+
+      <!-- Paper 1: SARA -->
+      <div class="paper-card">
+        <div class="headline">💡 SARA：双流VAE实现高保真语音生成</div>
+        <div class="title">SARA: A Dual-Stream VAE for High-Fidelity Speech Generation via Integrating Semantic and Acoustic Representations</div>
+        <div class="meta">
+          <span>👤 Peijie Chen, Wenhao Guan, Weijie Wu等10人</span>
+          <span>📅 2026-06-11</span>
+          <span>Interspeech 2026</span>
+        </div>
+        <div class="tags">
+          <span class="tag">零样本文本到语音</span>
+          <span class="tag">变分自编码器</span>
+          <span class="tag">自监督学习</span>
+          <span class="tag">语音表征</span>
+          <span class="tag">双流架构</span>
+        </div>
+        <div class="overview">
+          针对零样本文本到语音（TTS）中语音表征在声学保真度与语义可控性之间的根本性权衡问题，本文提出SARA——一种双流变分自编码器架构。该方法创新性地将冻结的自监督学习（SSL）语义编码器作为锚点，与专用的残差声学编码器直接融合，构建高效紧凑的潜在空间，避免了复杂正则化器的依赖。SARA在50Hz、64维的信息瓶颈下实现了语义与声学表征的时间对齐。实验表明，SARA在语音重建质量上优于强基线模型，显著提升了可懂度与音质。在下游零-shot TTS任务中，基于F5-TTS框架使用SARA潜在空间，在内容准确性和说话人相似度方面取得实质性提升，并在加速推理下仍保持鲁棒生成性能，实现了合成速度与计算开销的良好平衡。
+        </div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2606.11611" target="_blank">arXiv</a>
+          <a href="https://arxiv.org/pdf/2606.11611" target="_blank">PDF</a>
+          <a href="https://pppjchen.github.io/SARA." target="_blank">Project</a>
+        </div>
+      </div>
+
+      <!-- Paper 2: ACW -->
+      <div class="paper-card">
+        <div class="headline">💡 ACW语义时间尺度：解析人类与AI语言的动态差异</div>
+        <div class="title">The Dynamics of Human and AI-Generated Language: How Semantics Fluctuates across Different Timescales</div>
+        <div class="meta">
+          <span>👤 Han-Jen Chang, Yasir Catal, Angelika Wolman等8人</span>
+          <span>📅 2026-06-11</span>
+        </div>
+        <div class="tags">
+          <span class="tag">语义时间尺度</span>
+          <span class="tag">自相关窗口</span>
+          <span class="tag">WordNet词深度</span>
+          <span class="tag">SBERT嵌入</span>
+          <span class="tag">语音时间结构分析</span>
+        </div>
+        <div class="overview">
+          该研究探讨了人类与大型语言模型（LLM）生成语言在语义内容随时间波动方面的差异，提出了一套语义时间尺度分析管道。研究将带时间戳的词级转录转化为语义时间序列，利用WordNet词深度衡量语义特异性，使用SBERT嵌入计算上下文相似性，并通过自相关窗口度量（ACW-0等）量化时间依赖性。实验涵盖人类朗读自传体叙述（H-H）、人类文本经TTS朗读（H-TTS）及LLM生成文本经TTS朗读（LLM-TTS）三类数据。结果显示，ACW-0较长的段倾向于包含更通用的词汇，而ACW-0较短的段则富含更具体的词汇。当词序和时序被打乱后，这些关联显著减弱或消失（p&lt;0.001），表明ACW度量捕捉到了超越静态词汇分布的非平凡时间组织结构。
+        </div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2606.11371" target="_blank">arXiv</a>
+          <a href="https://arxiv.org/pdf/2606.11371" target="_blank">PDF</a>
+          <a href="https://github.com/wannesm/dtaidistance" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <!-- Paper 3: Spatial Audio -->
+      <div class="paper-card">
+        <div class="headline">💡 空间音频生成评估指标敏感性分析研究</div>
+        <div class="title">Sensitivity Analysis of Generative Spatial Audio Metrics: A Study on Responsiveness, Smoothness, and Symmetry</div>
+        <div class="meta">
+          <span>👤 Purnima Kamath, Adrian S. Roman, Koichi Saito等5人</span>
+          <span>📅 2026-06-11</span>
+          <span>Interspeech 2026</span>
+        </div>
+        <div class="tags">
+          <span class="tag">空间音频生成</span>
+          <span class="tag">指标敏感性分析</span>
+          <span class="tag">一阶双声道</span>
+          <span class="tag">Frechet音频距离</span>
+          <span class="tag">强度向量</span>
+        </div>
+        <div class="overview">
+          本文针对一阶双声道（FOA）空间音频生成模型的评估难题，提出了一套基于连续空间轨迹的指标敏感性分析框架。作者借鉴参数化声音合成中的敏感性分析原理，定义了三个关键评估标准：响应性（Responsiveness）、平滑性（Smoothness）和对称性（Symmetry）。实验使用受控FOA场景，逐步增加场景复杂度，评估了包括Frechet音频距离（FAD）、强度向量和声学图谱在内的多种指标。研究发现，使用定位特定嵌入的FAD具有高响应性，且在噪声和场景复杂度变化下表现出稳健的平滑性和对称性；而强度向量在多源对称评估中性能下降。该研究为理解空间音频生成评估指标的敏感性迈出了第一步。
+        </div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2606.11581" target="_blank">arXiv</a>
+          <a href="https://arxiv.org/pdf/2606.11581" target="_blank">PDF</a>
+          <a href="https://github.com/pkamath2/sa_sensitivity" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <!-- Paper 4: CogAudio-LLM -->
+      <div class="paper-card">
+        <div class="headline">💡 CogAudio-LLM：突破语义主导的情感推理框架</div>
+        <div class="title">Beyond Semantic Dominance: Cognitive Affective Reasoning and Empathetic Response Alignment in Audio Language Models</div>
+        <div class="meta">
+          <span>👤 Zhixian Zhao, Shuiyuan Wang, Wenjie Tian等6人</span>
+          <span>🏢 西北工业大学</span>
+          <span>📅 2026-06-11</span>
+        </div>
+        <div class="tags">
+          <span class="tag">音频语言模型</span>
+          <span class="tag">情感推理</span>
+          <span class="tag">语义解耦</span>
+          <span class="tag">思维链</span>
+          <span class="tag">强化学习</span>
+        </div>
+        <div class="overview">
+          当前音频语言模型（ALMs）在情感交互中面临两大瓶颈：一是文本语义主导掩盖声学细节，导致对讽刺或强颜欢笑等复杂情绪误判；二是认知深度不足，生成通用化、无情感共鸣的回应。为此，西北工业大学ASLP团队提出CogAudio-LLM框架，包含三项核心创新：首先构建LIME-440K数据集，采用'词汇相同、情感不同'设计实现声学-语义解耦；其次引入EIPS四步思维链（CoT），融合心理学推理机制；最后提出DR-SAPO（双路径软自适应策略优化）算法，动态平衡逻辑严谨性与共情质量。训练上采用多阶段策略：先通过监督微调显式建立EIPS推理路径，再将其蒸馏为隐式生成过程以提升推理效率。实验表明，该框架在细粒度情感识别与共情响应生成上达到最优性能，并在ESD和HumDial等真实人类语音数据集上展现出强零样本泛化能力。
+        </div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2606.06940" target="_blank">arXiv</a>
+          <a href="https://arxiv.org/pdf/2606.06940" target="_blank">PDF</a>
+          <a href="https://github.com/zxzhao0/CogAudio-LLM" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <!-- Paper 5: Activation Steering -->
+      <div class="paper-card">
+        <div class="headline">💡 激活转向克服全双工语音模型状态惯性</div>
+        <div class="title">Overcoming State Inertia in Full-Duplex Spoken Language Models via Activation Steering</div>
+        <div class="meta">
+          <span>👤 Cheng-Kuang Chang, Kai-Wei Chang, Alexander H. Liu等4人</span>
+          <span>📅 2026-06-11</span>
+        </div>
+        <div class="tags">
+          <span class="tag">全双工语音模型</span>
+          <span class="tag">状态惯性</span>
+          <span class="tag">激活转向</span>
+          <span class="tag">打断处理</span>
+          <span class="tag">隐藏表示分析</span>
+        </div>
+        <div class="overview">
+          全双工语音语言模型（FD-SLMs）能同时听和说，实现流畅的人机对话，但其内部如何协调听与说的机制尚不明确。本文通过logit lens分析FD-SLM的隐藏表示，发现模型存在流特定的预测模式：倾听时偏向预测用户输入流，说话时偏向预测模型输出流。模型在生成状态和感知状态之间动态切换，但在用户突然打断时，这种切换存在延迟，导致模型短暂停留在生成状态，错过用户输入的开头部分，作者将这种现象命名为"状态惯性"（state inertia）。为量化这一现象，论文提出零缓冲基准测试（ZBB），以正确率和首词出现率（IWOR）为指标。实验表明，打断导致PersonaPlex的正确率从0.49降至0.28，IWOR从0.74降至0.40。为解决该问题，作者提出一种无需训练的激活转向方法，通过注入感知向量干预模型内部状态，将正确率从28%提升至45%，IWOR从40%恢复至72%，恢复了94%的打断导致的IWOR下降。
+        </div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2606.11386" target="_blank">arXiv</a>
+          <a href="https://arxiv.org/pdf/2606.11386" target="_blank">PDF</a>
+        </div>
+      </div>
+
+      <!-- Paper 6: ViP-VL -->
+      <div class="paper-card">
+        <div class="headline">💡 ViP-VL：越南语自监督语音预训练新突破</div>
+        <div class="title">ViP-VL: Vietnamese Self-supervised Speech Pretraining Model with Vector-Quantization Learning</div>
+        <div class="meta">
+          <span>👤 Khanh Le, Kiet Anh Hoang, Bao Nguyen等9人</span>
+          <span>📅 2026-06-11</span>
+        </div>
+        <div class="tags">
+          <span class="tag">自监督学习</span>
+          <span class="tag">语音预训练</span>
+          <span class="tag">向量量化</span>
+          <span class="tag">越南语</span>
+          <span class="tag">ChunkFormer</span>
+        </div>
+        <div class="overview">
+          本文提出ViP-VL，一种面向越南语的高效自监督语音预训练模型，基于向量量化学习框架。研究聚焦于低资源语言语音表示学习难题，采用BEST-RQ作为预训练目标，结合ChunkFormer编码器架构，并引入声学堆叠（Acoustic Stacking）与感受野对齐（Receptive Field Alignment）技术，实现8倍同步下采样，同时设计专门的掩码选择策略以增强表示鲁棒性。模型在17,000小时无标注越南语语音上进行预训练，在自动语音识别（ASR）、语音情感识别（SER）、方言分类和说话人验证四项下游任务中均达到新的最优性能（SOTA）。模型已开源，旨在推动越南语及低资源语言语音技术发展。
+        </div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2606.10360" target="_blank">arXiv</a>
+          <a href="https://arxiv.org/pdf/2606.10360" target="_blank">PDF</a>
+          <a href="https://github.com/khanld/chunkformer" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <!-- Paper 7: Gumbel-BEARD -->
+      <div class="paper-card">
+        <div class="headline">💡 Gumbel-BEARD：低资源领域Whisper自动层选择方法</div>
+        <div class="title">Gumbel-BEARD: Automatic Layer Selection for Self-Supervised Adaptation of Whisper in Low-Resource Domains</div>
+        <div class="meta">
+          <span>👤 Zilai Wang, Natarajan Balaji Shankar, Mohan Shi等5人</span>
+          <span>🏢 UC; NVIDIA; Meta</span>
+          <span>📅 2026-06-11</span>
+        </div>
+        <div class="tags">
+          <span class="tag">语音识别</span>
+          <span class="tag">领域自适应</span>
+          <span class="tag">自监督学习</span>
+          <span class="tag">Whisper模型</span>
+          <span class="tag">低资源语音处理</span>
+        </div>
+        <div class="overview">
+          针对语音基础模型在低资源领域因领域不匹配和数据稀缺导致的性能退化问题，本文提出Gumbel-BEARD框架，通过端到端可训练的硬Gumbel-Softmax选择器自动选择Whisper编码器的最优中间层，并结合BEST-RQ自监督目标实现无标注音频的领域自适应。该方法无需人工调参即可动态适应目标声学特性。实验在MyST儿童语音语料库上验证了其高效性：仅用10小时标注数据进行微调，即可匹配使用完整133小时标注数据训练的全监督基线模型。在MyST测试集上，Whisper-medium实现了8.21%的词错误率（WER），在OGI Spontaneous数据集上Whisper-small达到11.06% WER，均创下了新的最优结果。此外，在CORAAL成人方言数据集上的评估显示高达6%的相对WER降低。
+        </div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2606.11429" target="_blank">arXiv</a>
+          <a href="https://arxiv.org/pdf/2606.11429" target="_blank">PDF</a>
+          <a href="https://github.com/Zilai-WANG/Gumbel_Beard" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <!-- Paper 8: NaijaS2ST -->
+      <div class="paper-card">
+        <div class="headline">💡 NaijaS2ST：低资源尼日利亚语言多口音语音翻译基准</div>
+        <div class="title">NaijaS2ST: A Multi-Accent Benchmark for Speech-to-Speech Translation in Low-Resource Nigerian Languages</div>
+        <div class="meta">
+          <span>👤 Marie Maltais, Yejin Jeon, Min Ma等10人</span>
+          <span>🏢 McGill; DeepMind; Google</span>
+          <span>📅 2026-06-11</span>
+        </div>
+        <div class="tags">
+          <span class="tag">语音翻译</span>
+          <span class="tag">低资源语言</span>
+          <span class="tag">多口音建模</span>
+          <span class="tag">AudioLLM</span>
+          <span class="tag">端到端系统</span>
+        </div>
+        <div class="overview">
+          该论文针对非洲低资源语言语音翻译数据稀缺问题，构建了首个面向伊博语、豪萨语、约鲁巴语和尼日利亚皮钦英语的多口音平行语音-文本翻译数据集NaijaS2ST，包含每种语言超过40小时的语音数据，涵盖多种说话人和口音变化。研究系统比较了级联（ASR+MT+TTS）、端到端（SeamlessM4T）和AudioLLM（Gemini 3.1）三种架构在双向语音到文本（S2TT）和语音到语音（S2ST）任务上的表现。实验结果表明，在S2TT任务中，AudioLLM表现最优，如Gemini 3.1 Few-Shot在豪萨语到英语方向达到61.8 SSA-COMET，显著高于级联系统的50.4；而端到端模型需微调才能发挥潜力。对于S2ST，级联与AudioLLM性能接近，说明当前瓶颈在于翻译质量而非语音合成。
+        </div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2604.16287" target="_blank">arXiv</a>
+          <a href="https://arxiv.org/pdf/2604.16287" target="_blank">PDF</a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">⭐ 标准论文</h2>
+
+      <!-- Paper 9: MEGUMI -->
+      <div class="paper-card">
+        <div class="headline">💡 MEGUMI：多语言情感验证对话系统</div>
+        <div class="title">I Understand How You Feel: Enhancing Deeper Emotional Support Through Multilingual Emotional Validation in Dialogue System</div>
+        <div class="meta">
+          <span>👤 Zi Haur Pang, Yahui Fu, Koji Inoue等4人</span>
+          <span>📅 2026-06-11</span>
+        </div>
+        <div class="tags">
+          <span class="tag">情感验证</span>
+          <span class="tag">多语言对话系统</span>
+          <span class="tag">门控融合</span>
+          <span class="tag">情感计算</span>
+          <span class="tag">心理健康支持</span>
+        </div>
+        <div class="overview">
+          该研究针对对话系统中情感验证（emotional validation）计算研究不足的问题，提出将情感验证分解为响应识别、时机检测与响应生成三个子任务。团队构建了包含12万条英日双语对话的M-EDESConv语料库及口语测试集M-TESC，并设计了MEGUMI模型——一种融合冻结XLM-RoBERTa语义表示与语言特定情感编码器的多模态门控融合架构，通过跨模态注意力与门控机制实现多语言情感感知。实验表明，MEGUMI在M-EDESConv和M-TESC数据集上均表现优越。在LLM评估中，GPT-4.1 Nano（CoT）在整体情感支持评分上达到75.10，但情感理解仍是主要短板。研究揭示了当前LLM虽能生成多样且上下文相关的情感验证响应，但在深层情感理解方面仍有显著提升空间。
+        </div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2606.11875" target="_blank">arXiv</a>
+          <a href="https://arxiv.org/pdf/2606.11875" target="_blank">PDF</a>
+          <a href="https://github.com/zihaurpang" target="_blank">Code</a>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>自动生成 by Hermes OWL · 数据来源：arXiv eess.AS + cs.SD</p>
+    <p><a href="../index.html">← 返回首页</a></p>
+  </footer>
+</body>
+</html>
