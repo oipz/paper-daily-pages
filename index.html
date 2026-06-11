@@ -2,42 +2,36 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#0a0a12">
   <title>Paper Daily - 语音与音频 AI 日报</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-  <header class="header">
-    <h1>🎙️ Paper Daily</h1>
-    <p class="subtitle">语音与音频 AI 日报</p>
-    <p class="date">每天精选 arXiv 最新论文，深度中文分析</p>
-  </header>
-
-  <div class="container">
-    <section class="section">
-      <h2 class="section-title">📅 日报列表</h2>
-      <ul class="paper-list" id="daily-list">
-        <!-- 日报列表由 JS 动态生成 -->
-      </ul>
-    </section>
+<body data-theme="dark">
+  <div class="index-page">
+    <div class="index-hero">
+      <h1>🎙️ Paper Daily</h1>
+      <p class="index-subtitle">语音与音频 AI 日报</p>
+      <p class="index-desc">每天精选 arXiv 最新论文，基于 PDF 全文深度中文分析</p>
+      <div class="index-stats">
+        <div class="stat-box"><span class="stat-num">1</span><span class="stat-lbl">期数</span></div>
+        <div class="stat-box"><span class="stat-num">arXiv</span><span class="stat-lbl">数据源</span></div>
+        <div class="stat-box"><span class="stat-num">PDF全文</span><span class="stat-lbl">分析方式</span></div>
+      </div>
+    </div>
+    <div class="index-list">
+      <h2 class="index-list-title">📅 日报列表</h2>
+      <div class="report-list">
+      <a href="daily/2026-06-11/index.html" class="report-row"><span class="report-title">语音与音频 AI 日报 · 2026-06-11</span><span class="report-date">2026-06-11</span></a>
+      </div>
+    </div>
+    <footer class="site-footer">
+      <p>自动生成 by Hermes OWL · 数据来源：arXiv eess.AS + cs.SD</p>
+    </footer>
   </div>
-
-  <footer class="footer">
-    <p>自动生成 by Hermes OWL · 数据来源：arXiv eess.AS + cs.SD</p>
-  </footer>
-
-  <script>
-    // 日报列表 - 每天运行后自动更新
-    const dailyReports = [
-      { date: '2026-06-11', title: '第5期 · PDF 全文分析', url: 'daily/2026-06-11/index.html' },
-    ];
-
-    const listEl = document.getElementById('daily-list');
-    dailyReports.forEach(report => {
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="${report.url}">${report.title}</a><span class="date">${report.date}</span>`;
-      listEl.appendChild(li);
-    });
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
