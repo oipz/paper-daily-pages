@@ -108,48 +108,39 @@
     if (mode === currentMode) return;
     currentMode = mode;
     
-    // 保存模式
     try { localStorage.setItem(MODE_KEY, mode); } catch(e) {}
     
-    // 更新按钮状态
     document.querySelectorAll('.mode-btn').forEach(function(btn) {
       btn.classList.toggle('active', btn.getAttribute('data-mode') === mode);
     });
     
-    // 应用模式到所有卡片
     applyMode(mode);
   };
 
   function applyMode(mode) {
     var cards = document.querySelectorAll('.paper-card');
-    var store = getExpandStore();
     
     cards.forEach(function(card) {
-      var arxivId = card.getAttribute('data-arxiv-id');
+      var hasDetail = card.getAttribute('data-has-detail') === 'true';
       var tier = card.getAttribute('data-tier') || '';
       
+      // 不相关论文（无详细内容）始终折叠
+      if (!hasDetail) {
+        card.classList.remove('expanded');
+        return;
+      }
+      
       if (mode === 'brief') {
-        // 简略模式：所有论文折叠
         card.classList.remove('expanded');
       } else if (mode === 'normal') {
-        // 普通模式：🔥 重点论文默认展开，其他折叠
+        // 标准模式：重点展开，其他折叠
         if (tier === 'hot') {
           card.classList.add('expanded');
         } else {
           card.classList.remove('expanded');
         }
       } else if (mode === 'full') {
-        // 详细模式：所有论文展开
         card.classList.add('expanded');
-      }
-      
-      // 检查是否有用户手动设置的状态（覆盖模式默认）
-      if (arxivId && store.hasOwnProperty(arxivId)) {
-        if (store[arxivId]) {
-          card.classList.add('expanded');
-        } else {
-          card.classList.remove('expanded');
-        }
       }
     });
   }
