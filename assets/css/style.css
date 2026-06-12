@@ -516,6 +516,12 @@ body {
   white-space: nowrap;
 }
 
+.meta-first-submit {
+  font-size: 0.75rem;
+  color: #fbbf24;
+  opacity: 0.8;
+}
+
 /* ── Header Static (no-detail) ── */
 .paper-header-static {
   cursor: default;
@@ -842,12 +848,6 @@ body[data-theme="light"] {
 /* ── Utility ── */
 a { color: inherit; }
 img { max-width: 100%; height: auto; }
-
-.meta-first-submit {
-  font-size: 0.75rem;
-  color: #fbbf24;
-  opacity: 0.8;
-}
 
 /* ── Brief Card (紧凑模式) ── */
 .card-brief {
