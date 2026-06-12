@@ -381,31 +381,39 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
+  flex-wrap: wrap;
 }
 
 .headline-text {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-muted);
   line-height: 1.4;
-  flex: 1;
   transition: color 0.2s;
 }
 
 /* ── One Liner (一句话概要) ── */
 .paper-one-liner {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
   line-height: 1.5;
-  margin-top: 0.25rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  margin-bottom: 0.2rem;
 }
 
 .one-liner-text {
   /* 一句话概要文字 */
+}
+
+/* ── Paper Title Small (折叠态副标题) ── */
+.paper-title-small {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ── Paper Body (展开/收起区域) ── */
