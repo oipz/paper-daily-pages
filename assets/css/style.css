@@ -393,11 +393,6 @@ body {
   transition: color 0.2s;
 }
 
-/* ── Collapse Brief (折叠时显示的简短介绍) ── */
-.paper-meta-collapse {
-  display: none;
-}
-
 /* ── One Liner (一句话概要) ── */
 .paper-one-liner {
   font-size: 0.85rem;
@@ -529,6 +524,10 @@ body {
 
 .paper-header-static:hover {
   opacity: 0.9;
+}
+
+.paper-header-static:hover .headline-text {
+  color: var(--text-primary);
 }
 
 .paper-overview {
@@ -843,21 +842,6 @@ body[data-theme="light"] {
 /* ── Utility ── */
 a { color: inherit; }
 img { max-width: 100%; height: auto; }
-
-/* ── Replace Badge ── */
-.replace-badge {
-  display: inline-block;
-  font-size: 0.65rem;
-  font-weight: 500;
-  color: #fbbf24;
-  background: rgba(251, 191, 36, 0.1);
-  padding: 0.15rem 0.5rem;
-  border-radius: 3px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-top: 0.2rem;
-  border: 1px solid rgba(251, 191, 36, 0.2);
-}
 
 .meta-first-submit {
   font-size: 0.75rem;
