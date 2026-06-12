@@ -410,16 +410,14 @@ body {
 
 /* ── Paper Body (展开/收起区域) ── */
 .paper-body {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
+  display: none;
   opacity: 0;
   margin-top: 0;
-  overflow: hidden;
+  transition: opacity 0.3s ease, margin-top 0.3s ease;
 }
 
 .paper-card.expanded .paper-body {
-  grid-template-rows: 1fr;
+  display: block;
   opacity: 1;
   margin-top: 0.75rem;
 }
