@@ -297,11 +297,16 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.25rem;
-  margin-bottom: 1rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
   transition: border-color 0.2s, background 0.2s;
   position: relative;
   overflow: hidden;
+}
+
+.paper-card.expanded {
+  padding: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .paper-card:hover {
@@ -390,6 +395,10 @@ body {
   padding-left: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: none;
+}
+
+.paper-card.expanded .paper-meta-collapse {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
