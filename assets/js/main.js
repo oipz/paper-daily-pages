@@ -60,6 +60,9 @@
     var card = headerEl.parentElement;
     if (!card || !card.classList.contains('paper-card')) return;
     
+    // 无详细内容的论文不可展开
+    if (card.getAttribute('data-has-detail') === 'false') return;
+    
     var arxivId = card.getAttribute('data-arxiv-id');
     var willExpand = !card.classList.contains('expanded');
     
@@ -93,7 +96,7 @@
   // ═══════════════════════════════════════
   
   var MODE_KEY = 'pd-mode';
-  var currentMode = 'brief'; // 默认简略模式
+  var currentMode = 'normal'; // 默认标准模式
   
   // 读取保存的模式
   try {
